@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Is Python For You?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .box {
+      background: white;
+      padding: 35px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px #0002;
+      max-width: 90%;
+    }
+    button {
+      padding: 12px 18px;
+      margin: 10px;
+      border: 0;
+      border-radius: 8px;
+      background: #176b45;
+      color: white;
+      cursor: pointer;
+    }
+    #language { position: relative; }
+    #result { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <main class="box">
+    <h2>What is Python for you? 🐍</h2>
+    <button onclick="snake()">SNAKE</button>
+    <button id="language" onmouseenter="runAway()">PROGRAMMING LANGUAGE</button>
+    <p id="result" aria-live="polite"></p>
+  </main>
+
+  <script>
+    function snake() {
+      document.getElementById("result").innerHTML =
+        "😂 WRONG ANSWER! The snake is offended.<br><br>" +
+        "<b>Python</b> is a high-level, general-purpose programming " +
+        "language known for its readable syntax and wide use in " +
+        "web development, automation, data science, and AI.";
+    }
+
+    function runAway() {
+      const button = document.getElementById("language");
+      button.style.position = "fixed";
+      button.style.left = Math.random() * (window.innerWidth - button.offsetWidth) + "px";
+      button.style.top = Math.random() * (window.innerHeight - button.offsetHeight) + "px";
+    }
+  </script>
+</body>
+</html>
